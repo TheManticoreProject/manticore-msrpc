@@ -1,4 +1,4 @@
-module github.com/TheManticoreProject/msrpc
+module github.com/TheManticoreProject/manticore-msrpc
 
 go 1.24.0
 
