@@ -144,31 +144,7 @@ Available commands:
 
 > Note: opnum probing is most precise against an authenticated session. Over an
 > unauthenticated bind, interfaces that require authentication answer every call with
-> `nca_s_fault_access_denied` (which masks the opnum-range signal); the console reports
-> this rather than guessing a count.
-
-## Output format
-
-Results follow the shared TheManticoreProject convention: a `[>] <Title> (<count>):`
-header with the count in yellow, items rendered as a tree (`├──` / `└──`), resolved
-service names in green, and UUIDs / bindings in blue.
-
-```
-[>] Enumerating RPC endpoints on 10.0.0.5
-[>] Registered interfaces (3):
-  ├── samr 12345778-1234-abcd-ef00-0123456789ac v1.0 (MS-SAMR - Security Account Manager)
-  │   └── ncacn_ip_tcp:10.0.0.5[49664]
-  ├── srvsvc 4b324fc8-1670-01d3-1278-5a47bf6ee188 v3.0 (MS-SRVS - Server Service)
-  │   ├── ncacn_ip_tcp:10.0.0.5[49152]
-  │   └── ncacn_np:DC01[\PIPE\srvsvc]
-  └── 906b0ce0-c70b-1067-b317-00dd010662da v1.0
-      └── ncacn_ip_tcp:10.0.0.5[49155] 'MS DTC'
-
-[>] Found 4 endpoints across 3 interfaces.
-```
-
-`--json` short-circuits the tree and prints a stable schema
-(`{interface_uuid, version, name, title, protocol, bindings:[{binding, annotation, object_uuid}]}`).
+> `nca_s_fault_access_denied` (which masks the opnum-range signal)
 
 ## Contributing
 
